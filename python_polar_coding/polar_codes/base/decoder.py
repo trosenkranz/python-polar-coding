@@ -32,7 +32,7 @@ class BaseDecoder(metaclass=abc.ABCMeta):
         for i in range(self.N):
             if self.mask[i] == 1:
                 decoded_info = np.append(decoded_info, decoded[i])
-        return np.array(decoded_info, dtype=np.int)
+        return np.array(decoded_info, dtype=np.int8)
 
 
 class BaseTreeDecoder(metaclass=abc.ABCMeta):
@@ -90,7 +90,7 @@ class BaseTreeDecoder(metaclass=abc.ABCMeta):
         for i in range(self.N):
             if self.mask[i] == 1:
                 decoded_info = np.append(decoded_info, decoded[i])
-        return np.array(decoded_info, dtype=np.int)
+        return np.array(decoded_info, dtype=np.int8)
 
     def _setup_decoding_tree(self, ):
         """Setup decoding tree."""
