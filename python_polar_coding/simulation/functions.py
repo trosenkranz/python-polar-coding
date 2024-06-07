@@ -23,8 +23,8 @@ def transmission(code, channel, snr_db):
     decoded = code.decode(llr)
 
     fails = compute_fails(expected=message, decoded=decoded)
-    bit_errors = fails
-    frame_errors = int(fails > 0)
+    bit_errors = fails[0]
+    frame_errors = int(fails[1] > 0)
 
     return bit_errors, frame_errors
 
